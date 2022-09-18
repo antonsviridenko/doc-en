@@ -4,6 +4,40 @@
  &extension.constants;
  <para>
   <variablelist>
+   <varlistentry xml:id="constant.rnp-keystore-gpg">
+    <term>
+     <constant>RNP_KEYSTORE_GPG</constant>
+     (<type>string</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Keystore format "GPG".
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-keystore-kbx">
+    <term>
+     <constant>RNP_KEYSTORE_KBX</constant>
+     (<type>string</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Keystore format "KBX". For public keys only.
+      A keybox is a file format used to store public keys along with meta information and indices.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-keystore-g10">
+    <term>
+     <constant>RNP_KEYSTORE_G10</constant>
+     (<type>string</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Keystore format "G10". For private keys.
+     </simpara>
+    </listitem>
+   </varlistentry>
    <varlistentry xml:id="constant.rnp-load-save-public-keys">
     <term>
      <constant>RNP_LOAD_SAVE_PUBLIC_KEYS</constant>
@@ -11,6 +45,8 @@
     </term>
     <listitem>
      <simpara>
+      Load or save public keys only. Can be OR-ed with <constant>RNP_LOAD_SAVE_SECRET_KEYS</constant>
+      to load both public and private keys to the FFI context or save them from the context.
      </simpara>
     </listitem>
    </varlistentry>
@@ -21,6 +57,8 @@
     </term>
     <listitem>
      <simpara>
+      Load or save secret keys only. Can be OR-ed with <constant>RNP_LOAD_SAVE_PUBLIC_KEYS</constant>
+      to load both public and private keys to the FFI context or save them from the context.
      </simpara>
     </listitem>
    </varlistentry>
@@ -31,6 +69,7 @@
     </term>
     <listitem>
      <simpara>
+      Allows to ignore bad signature/key/subkey packets during key import.
      </simpara>
     </listitem>
    </varlistentry>
@@ -41,6 +80,7 @@
     </term>
     <listitem>
      <simpara>
+      If set, only the first key will be loaded.
      </simpara>
     </listitem>
    </varlistentry>
@@ -51,6 +91,7 @@
     </term>
     <listitem>
      <simpara>
+      Allow import of base64-encoded keys (autocrypt ones).
      </simpara>
     </listitem>
    </varlistentry>
@@ -61,6 +102,7 @@
     </term>
     <listitem>
      <simpara>
+      List available symmetric encryption algorithms.
      </simpara>
     </listitem>
    </varlistentry>
@@ -71,6 +113,7 @@
     </term>
     <listitem>
      <simpara>
+      List available AEAD algorithms.
      </simpara>
     </listitem>
    </varlistentry>
@@ -81,6 +124,7 @@
     </term>
     <listitem>
      <simpara>
+      List available protection modes.
      </simpara>
     </listitem>
    </varlistentry>
@@ -91,6 +135,7 @@
     </term>
     <listitem>
      <simpara>
+      List available public key algorithms.
      </simpara>
     </listitem>
    </varlistentry>
@@ -101,6 +146,7 @@
     </term>
     <listitem>
      <simpara>
+      List available hash algorithms.
      </simpara>
     </listitem>
    </varlistentry>
@@ -111,6 +157,7 @@
     </term>
     <listitem>
      <simpara>
+      List available compression algorithms.
      </simpara>
     </listitem>
    </varlistentry>
@@ -121,6 +168,7 @@
     </term>
     <listitem>
      <simpara>
+      List available elliptic curves.
      </simpara>
     </listitem>
    </varlistentry>
@@ -131,6 +179,7 @@
     </term>
     <listitem>
      <simpara>
+      Dump MPI (Multi-precision integer) values.
      </simpara>
     </listitem>
    </varlistentry>
@@ -141,6 +190,7 @@
     </term>
     <listitem>
      <simpara>
+      Dump raw packet contents as well.
      </simpara>
     </listitem>
    </varlistentry>
@@ -151,6 +201,7 @@
     </term>
     <listitem>
      <simpara>
+      Dump key fingerprints and grips.
      </simpara>
     </listitem>
    </varlistentry>
@@ -161,6 +212,7 @@
     </term>
     <listitem>
      <simpara>
+      Dump MPI (Multi-precision integer) values.
      </simpara>
     </listitem>
    </varlistentry>
@@ -171,6 +223,7 @@
     </term>
     <listitem>
      <simpara>
+      Dump raw packet contents as well.
      </simpara>
     </listitem>
    </varlistentry>
@@ -181,6 +234,7 @@
     </term>
     <listitem>
      <simpara>
+      Dump key fingerprints and grips.
      </simpara>
     </listitem>
    </varlistentry>
@@ -191,6 +245,8 @@
     </term>
     <listitem>
      <simpara>
+      Allows encryption of signed message. Message is not wrapped
+      into literal data packet.
      </simpara>
     </listitem>
    </varlistentry>

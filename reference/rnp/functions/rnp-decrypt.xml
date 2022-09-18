@@ -2,7 +2,7 @@
 <refentry xml:id="function.rnp-decrypt" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
   <refname>rnp_decrypt</refname>
-  <refpurpose>Description</refpurpose>
+  <refpurpose>Decrypt PGP message</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
@@ -13,10 +13,10 @@
    <methodparam><type>string</type><parameter>input</parameter></methodparam>
   </methodsynopsis>
   <para>
-
+   Private keys used for decryption should be loaded into the FFI object before calling this function.
+   If password encryption was used, then password provider should be set by calling
+   <function>rnp_ffi_set_pass_provider</function>.
   </para>
-
-  &warn.undocumented.func;
 
  </refsect1>
 
@@ -27,7 +27,7 @@
     <term><parameter>ffi</parameter></term>
     <listitem>
      <para>
-      
+      &rnp.parameter.ffi-description;
      </para>
     </listitem>
    </varlistentry>
@@ -35,7 +35,7 @@
     <term><parameter>input</parameter></term>
     <listitem>
      <para>
-      
+      Encrypted message.
      </para>
     </listitem>
    </varlistentry>
@@ -45,7 +45,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   
+   Decrypted message on success&return.falseforfailure;.
   </para>
  </refsect1>
 

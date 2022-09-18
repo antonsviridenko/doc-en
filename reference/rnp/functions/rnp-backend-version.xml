@@ -2,7 +2,7 @@
 <refentry xml:id="function.rnp-backend-version" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
   <refname>rnp_backend_version</refname>
-  <refpurpose>Description</refpurpose>
+  <refpurpose>Return cryptographic backend library version</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
@@ -15,8 +15,6 @@
 
   </para>
 
-  &warn.undocumented.func;
-
  </refsect1>
 
  <refsect1 role="parameters">
@@ -27,7 +25,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   
+   Version string.
   </para>
  </refsect1>
 

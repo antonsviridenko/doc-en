@@ -5,7 +5,9 @@
  <section xml:id="rnp.requirements">
   &reftitle.required;
   <para>
-
+   In order to use RNP library functions you need to install the<link
+   xlink:href="&url.rnp;">RNP</link> library. RNP library version &gt;= 0.16.2
+   is required.
   </para>
  </section>
 

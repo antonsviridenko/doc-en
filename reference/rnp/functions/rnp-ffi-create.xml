@@ -2,7 +2,7 @@
 <refentry xml:id="function.rnp-ffi-create" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
   <refname>rnp_ffi_create</refname>
-  <refpurpose>Description</refpurpose>
+  <refpurpose>Create the top-level object used for interacting with the library</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
@@ -16,7 +16,6 @@
 
   </para>
 
-  &warn.undocumented.func;
 
  </refsect1>
 
@@ -27,7 +26,8 @@
     <term><parameter>pub_format</parameter></term>
     <listitem>
      <para>
-      
+      the format of the public keyring, RNP_KEYSTORE_GPG or other
+      RNP_KEYSTORE_* constant.
      </para>
     </listitem>
    </varlistentry>
@@ -35,7 +35,8 @@
     <term><parameter>sec_format</parameter></term>
     <listitem>
      <para>
-      
+      the format of the secret keyring, RNP_KEYSTORE_GPG or other
+      RNP_KEYSTORE_* constant
      </para>
     </listitem>
    </varlistentry>
@@ -45,7 +46,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   
+   Returns <type>RnpFFI</type> object on success&return.falseforfailure;.
   </para>
  </refsect1>
 

@@ -2,7 +2,7 @@
 <refentry xml:id="function.rnp-op-generate-key" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
   <refname>rnp_op_generate_key</refname>
-  <refpurpose>Description</refpurpose>
+  <refpurpose>Generate key</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
@@ -19,7 +19,6 @@
 
   </para>
 
-  &warn.undocumented.func;
 
  </refsect1>
 
@@ -30,7 +29,7 @@
     <term><parameter>ffi</parameter></term>
     <listitem>
      <para>
-      
+      &rnp.parameter.ffi-description;
      </para>
     </listitem>
    </varlistentry>
@@ -38,7 +37,8 @@
     <term><parameter>userid</parameter></term>
     <listitem>
      <para>
-      
+      PGP User ID - text that is intended to represent
+      the name and email address of the key holder.
      </para>
     </listitem>
    </varlistentry>
@@ -46,7 +46,7 @@
     <term><parameter>key_alg</parameter></term>
     <listitem>
      <para>
-      
+      Primary key algorithm (i.e. 'RSA', 'DSA', etc).
      </para>
     </listitem>
    </varlistentry>
@@ -54,7 +54,7 @@
     <term><parameter>sub_alg</parameter></term>
     <listitem>
      <para>
-      
+      Subkey algorithm. If not set, subkey will not be generated.
      </para>
     </listitem>
    </varlistentry>
@@ -62,8 +62,76 @@
     <term><parameter>options</parameter></term>
     <listitem>
      <para>
-      
+      An associative array with options.
      </para>
+     <informaltable>
+      <tgroup cols="2">
+       <thead>
+        <row>
+         <entry>Key</entry>
+         <entry>Data type</entry>
+         <entry>&Description;</entry>
+        </row>
+       </thead>
+       <tbody>
+        <row>
+         <entry><literal>"bits"</literal></entry>
+         <entry>integer</entry>
+         <entry>Primary key size in bits. Applicable only to RSA, DSA and El-Gamal keys.</entry>
+        </row>
+        <row>
+         <entry><literal>"hash"</literal></entry>
+         <entry>string</entry>
+         <entry>Hash algorithm used in self signature or subkey binding signature.</entry>
+        </row>
+        <row>
+         <entry><literal>"dsa_qbits"</literal></entry>
+         <entry>integer</entry>
+         <entry>Set size of a <literal>q</literal> parameter for DSA key.
+          Note: appropriate default value will be set, depending on key bits. However you may
+          override it if needed.</entry>
+        </row>
+        <row>
+         <entry><literal>"curve"</literal></entry>
+         <entry>string</entry>
+         <entry>Set the curve used for ECC key. Note: this is only applicable for ECDSA, ECDH and SM2 keys.</entry>
+        </row>
+        <row>
+         <entry><literal>"request_password"</literal></entry>
+         <entry>boolean</entry>
+         <entry>Enable requesting password via password provider. This password
+          will be used for key encryption. Password provider callback function should be set in
+	  advance by calling <function>rnp_ffi_set_pass_provider</function>.
+          Note: this setting will be ignored if password was set via<literal>"password"</literal></entry>
+        </row>
+        <row>
+         <entry><literal>"password"</literal></entry>
+         <entry>string</entry>
+         <entry>Set the password used to encrypt the secret key data.</entry>
+        </row>
+        <row>
+         <entry><literal>"expiration"</literal></entry>
+         <entry>integer</entry>
+         <entry>Set the key and subkey expiration time in seconds.</entry>
+        </row>
+        <row>
+         <entry><literal>"sub_bits"</literal></entry>
+         <entry>integer</entry>
+         <entry>Subkey size in bits. Applicable only to RSA, DSA and El-Gamal keys.</entry>
+        </row>
+        <row>
+         <entry><literal>"sub_hash"</literal></entry>
+         <entry>string</entry>
+         <entry>Hash algorithm used in subkey self signature or subkey binding signature.</entry>
+        </row>
+        <row>
+         <entry><literal>"sub_curve"</literal></entry>
+         <entry>string</entry>
+         <entry>Set the curve used for ECC subkey. Note: this is only applicable for ECDSA, ECDH and SM2 keys.</entry>
+        </row>
+       </tbody>
+      </tgroup>
+     </informaltable>
     </listitem>
    </varlistentry>
   </variablelist>
@@ -72,7 +140,10 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   
+   Fingerprint of the generated primary key&return.falseforfailure;. This fingerprint can be used
+   later to reference the key in sign and encrypt operations. The key data is stored in FFI
+   memory context and can be saved using 
+   <function>rnp_save_keys</function> or <function>rnp_save_keys_to_path</function>.
   </para>
  </refsect1>
 

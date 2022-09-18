@@ -2,7 +2,7 @@
 <refentry xml:id="function.rnp-load-keys-from-path" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
   <refname>rnp_load_keys_from_path</refname>
-  <refpurpose>Description</refpurpose>
+  <refpurpose>Load keys from specified path</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
@@ -15,10 +15,8 @@
    <methodparam><type>int</type><parameter>flags</parameter></methodparam>
   </methodsynopsis>
   <para>
-
+   Note that for G10, the input must be a directory (which must already exist).
   </para>
-
-  &warn.undocumented.func;
 
  </refsect1>
 
@@ -29,7 +27,7 @@
     <term><parameter>ffi</parameter></term>
     <listitem>
      <para>
-      
+      &rnp.parameter.ffi-description;
      </para>
     </listitem>
    </varlistentry>
@@ -37,7 +35,7 @@
     <term><parameter>format</parameter></term>
     <listitem>
      <para>
-      
+      &rnp.parameter.key-format;
      </para>
     </listitem>
    </varlistentry>
@@ -45,7 +43,7 @@
     <term><parameter>input_path</parameter></term>
     <listitem>
      <para>
-      
+      file or directory containing the keys.
      </para>
     </listitem>
    </varlistentry>
@@ -53,7 +51,7 @@
     <term><parameter>flags</parameter></term>
     <listitem>
      <para>
-      
+      &rnp.parameter.loadsave-flags;
      </para>
     </listitem>
    </varlistentry>
@@ -63,7 +61,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   
+   Returns &true; on success&return.falseforfailure;.
   </para>
  </refsect1>
 

@@ -2,7 +2,7 @@
 <refentry xml:id="function.rnp-ffi-set-pass-provider" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  <refnamediv>
   <refname>rnp_ffi_set_pass_provider</refname>
-  <refpurpose>Description</refpurpose>
+  <refpurpose>Set password provider callback function</refpurpose>
  </refnamediv>
 
  <refsect1 role="description">
@@ -13,10 +13,11 @@
    <methodparam><type>callable</type><parameter>password_callback</parameter></methodparam>
   </methodsynopsis>
   <para>
-
+   Sets password provider function. This function can ask for the password on a standard input
+   (if PHP script is executed in a command line environment), display GUI dialog or provide
+   password in any other possible ways. Requested passwords are used to encrypt or decrypt
+   secret keys or perform symmetric encryption/decryption operations.
   </para>
-
-  &warn.undocumented.func;
 
  </refsect1>
 
@@ -27,15 +28,39 @@
     <term><parameter>ffi</parameter></term>
     <listitem>
      <para>
-      
+      &rnp.parameter.ffi-description;
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term><parameter>password_callback</parameter></term>
     <listitem>
-     <para>
-      
+     <para> 
+      The function that is to be called for every password request.  The following three arguments will be passed into it:
+      <simplelist>
+       <member><type>string</type> <literal>$key_fp</literal> - The key fingerprint, if any. Can be empty.</member>
+       <member><type>string</type> <literal>$pgp_context</literal> - String describing why the key is being requested.</member>
+       <member><type>string</type> <parameter role="reference">$password</parameter> - Password string reference where provided password should be stored to.</member>
+      </simplelist>
+      <example>
+       <title>simple callback function example</title>
+       <programlisting role="php">
+<![CDATA[
+<?php
+function password_callback(string $key_fp, string $pgp_context, string &$password)
+{
+        $password = "password";
+
+        return true;
+}
+
+$ffi = rnp_ffi_create('GPG', 'GPG');
+
+rnp_ffi_set_pass_provider($ffi, 'password_callback');
+]]>
+       </programlisting>
+      </example>
+      Callback function should return &true; if password was successfully set&return.falseforfailure;.
      </para>
     </listitem>
    </varlistentry>
@@ -45,7 +70,7 @@
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
-   
+   Returns &true; on success&return.falseforfailure;.
   </para>
  </refsect1>
 
