@@ -24,6 +24,7 @@
  <function name='rnp_op_verify_detached' from='PECL rnp &gt;= 0.1'/>
  <function name='rnp_op_encrypt' from='PECL rnp &gt;= 0.1'/>
  <function name='rnp_decrypt' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_locate_key' from='PECL rnp &gt;= 0.1'/>
  <!-- Classes and Methods -->
 
  <function name='rnpffi' from='PECL rnp &gt;= 0.1'/>
