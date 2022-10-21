@@ -26,6 +26,7 @@
  <function name='rnp_decrypt' from='PECL rnp &gt;= 0.1'/>
  <function name='rnp_locate_key' from='PECL rnp &gt;= 0.1'/>
  <function name='rnp_list_keys' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_key_get_info' from='PECL rnp &gt;= 0.1'/>
  <!-- Classes and Methods -->
 
  <function name='rnpffi' from='PECL rnp &gt;= 0.1'/>
