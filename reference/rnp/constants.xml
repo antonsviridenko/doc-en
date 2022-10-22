@@ -250,6 +250,94 @@
      </simpara>
     </listitem>
    </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-export-armored">
+    <term>
+     <constant>RNP_KEY_EXPORT_ARMORED</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Enable ASCII-armoring of exported data.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-export-public">
+    <term>
+     <constant>RNP_KEY_EXPORT_PUBLIC</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Export public key.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-export-secret">
+    <term>
+     <constant>RNP_KEY_EXPORT_SECRET</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Export secret key.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-export-subkeys">
+    <term>
+     <constant>RNP_KEY_EXPORT_SUBKEYS</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      If primary key is being exported, all subkeys will be exported too.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-export-base64">
+    <term>
+     <constant>RNP_KEY_EXPORT_BASE64</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Export base64-encoded autocrypt key instead of binary.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-remove-public">
+    <term>
+     <constant>RNP_KEY_REMOVE_PUBLIC</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Remove public key.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-remove-secret">
+    <term>
+     <constant>RNP_KEY_REMOVE_SECRET</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      Remove secret key.
+     </simpara>
+    </listitem>
+   </varlistentry>
+   <varlistentry xml:id="constant.rnp-key-remove-subkeys">
+    <term>
+     <constant>RNP_KEY_REMOVE_SUBKEYS</constant>
+     (<type>integer</type>)
+    </term>
+    <listitem>
+     <simpara>
+      If primary key is being deleted, all of its subkeys will be removed too.
+     </simpara>
+    </listitem>
+   </varlistentry>
   </variablelist>
  </para>
 </appendix>

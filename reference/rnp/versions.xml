@@ -27,6 +27,13 @@
  <function name='rnp_locate_key' from='PECL rnp &gt;= 0.1'/>
  <function name='rnp_list_keys' from='PECL rnp &gt;= 0.1'/>
  <function name='rnp_key_get_info' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_key_export' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_key_export_autocrypt' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_import_keys' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_key_remove' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_key_revoke' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_key_export_revocation' from='PECL rnp &gt;= 0.1'/>
+ <function name='rnp_import_signatures' from='PECL rnp &gt;= 0.1'/>
  <!-- Classes and Methods -->
 
  <function name='rnpffi' from='PECL rnp &gt;= 0.1'/>
